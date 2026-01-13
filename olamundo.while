@@ -1,2 +1,2 @@
 exiba "Ola Mundo!";
-escreva 2000 + 21
+exiba 2000 + 21;
