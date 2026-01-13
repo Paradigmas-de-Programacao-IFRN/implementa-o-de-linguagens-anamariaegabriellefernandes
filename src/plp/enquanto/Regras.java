@@ -2,11 +2,10 @@ package plp.enquanto;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import plp.enquanto.Linguagem.*;
 import plp.enquanto.parser.EnquantoBaseListener;
 import plp.enquanto.parser.EnquantoParser.*;
-
+import org.antlr.v4.runtime.tree.TerminalNode;
 import static java.lang.Integer.parseInt;
 
 public class Regras extends EnquantoBaseListener {
@@ -27,37 +26,33 @@ public class Regras extends EnquantoBaseListener {
 	}
 
 	@Override
-	public void exitBool(BoolContext ctx) {
-		valores.insira(ctx, new Booleano("verdadeiro".equals(ctx.getText())));
-	}
-
-	@Override
 	public void exitLeia(LeiaContext ctx) {
 		valores.insira(ctx, leia);
 	}
 
 	@Override
 	public void exitSe(SeContext ctx) {
-		final Bool condicao = valores.pegue(ctx.booleano());
-		final Comando entao = valores.pegue(ctx.comando(0));
-		final Comando senao = valores.pegue(ctx.comando(1));
+		Bool condicao = valores.pegue(ctx.booleano(0));
+		Comando entao = valores.pegue(ctx.comando(0));
+
+		Comando senao;
+		if (ctx.comando().size() > 1) {
+			senao = valores.pegue(ctx.comando(1));
+		} else {
+			senao = skip;
+		}
+
 		valores.insira(ctx, new Se(condicao, entao, senao));
 	}
 
 	@Override
 	public void exitInteiro(InteiroContext ctx) {
-		valores.insira(ctx, new Inteiro(parseInt(ctx.getText())));
+		valores.insira(ctx, new Inteiro(Integer.parseInt(ctx.getText())));
 	}
 
 	@Override
 	public void exitSkip(SkipContext ctx) {
 		valores.insira(ctx, skip);
-	}
-
-	@Override
-	public void exitEscreva(EscrevaContext ctx) {
-		final Expressao exp = valores.pegue(ctx.expressao());
-		valores.insira(ctx, new Escreva(exp));
 	}
 
 	@Override
@@ -69,8 +64,7 @@ public class Regras extends EnquantoBaseListener {
 
 	@Override
 	public void exitId(IdContext ctx) {
-		final String id = ctx.ID().getText();
-		valores.insira(ctx, new Id(id));
+		valores.insira(ctx, new Id(ctx.ID().getText()));
 	}
 
 	@Override
@@ -80,13 +74,6 @@ public class Regras extends EnquantoBaseListener {
 			comandos.add(valores.pegue(c));
 		}
 		valores.insira(ctx, comandos);
-	}
-
-	@Override
-	public void exitAtribuicao(AtribuicaoContext ctx) {
-		final String id = ctx.ID().getText();
-		final Expressao exp = valores.pegue(ctx.expressao());
-		valores.insira(ctx, new Atribuicao(id, exp));
 	}
 
 	@Override
@@ -101,9 +88,11 @@ public class Regras extends EnquantoBaseListener {
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
 		final Expressao exp = switch (op) {
+			case "**" -> new ExpPotencia(esq, dir);
 			case "*" -> new ExpMult(esq, dir);
 			case "-" -> new ExpSub(esq, dir);
-			default  -> new ExpSoma(esq, dir);
+			case "/" -> new ExpDiv(esq, dir);
+			default -> new ExpSoma(esq, dir);
 		};
 		valores.insira(ctx, exp);
 	}
@@ -140,22 +129,29 @@ public class Regras extends EnquantoBaseListener {
 		valores.insira(ctx, exp);
 	}
 
-	@Override
 	public void exitExiba(ExibaContext ctx) {
-		final String t = ctx.TEXTO().getText();
-		final String texto = t.substring(1, t.length() - 1);
-		valores.insira(ctx, new Exiba(texto));
+		if (ctx.TEXTO() != null) {
+			String t = ctx.TEXTO().getText();
+			valores.insira(ctx, new Exiba(t.substring(1, t.length() - 1)));
+		} else if (ctx.INT() != null) {
+			valores.insira(ctx, new Exiba(ctx.INT().getText()));
+		} else if (ctx.ID() != null) {
+			valores.insira(ctx, new Exiba(ctx.ID().getText()));
+		}
 	}
 
-	@Override
 	public void exitOpRel(OpRelContext ctx) {
 		final Expressao esq = valores.pegue(ctx.expressao(0));
 		final Expressao dir = valores.pegue(ctx.expressao(1));
 		final String op = ctx.getChild(1).getText();
 		final Bool exp = switch (op) {
-			case "="  -> new ExpIgual(esq, dir);
+			case "==" -> new ExpIgual(esq, dir);
 			case "<=" -> new ExpMenorIgual(esq, dir);
-			default   -> new ExpIgual(esq, esq);
+			case ">=" -> new ExpMaiorIgual(esq, dir);
+			case "<" -> new ExpMenor(esq, dir);
+			case ">" -> new ExpMaior(esq, dir);
+			case "<>" -> new ExpDiferente(esq, dir);
+			default -> new ExpIgual(esq, esq);
 		};
 		valores.insira(ctx, exp);
 	}

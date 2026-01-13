@@ -1,5 +1,4 @@
-// Generated from ./src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.13.1
-package plp.enquanto.parser;
+// Generated from /workspaces/implementa-o-de-linguagens-anamariaegabriellefernandes/src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

@@ -1,0 +1,10 @@
+a, b, c, d := 2, 3, 4, 7;
+a, b := b, a;
+nota := a + b + c;
+
+se nota >= 6 entao
+    exiba "Aprovado"
+senaose nota >= 3 entao
+    exiba "Recuperação"
+senao
+    exiba "Reprovado";

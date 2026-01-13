@@ -1,5 +1,4 @@
-// Generated from ./src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.13.1
-package plp.enquanto.parser;
+// Generated from /workspaces/implementa-o-de-linguagens-anamariaegabriellefernandes/src/plp/enquanto/parser/Enquanto.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -114,19 +113,6 @@ public class EnquantoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_programa; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterPrograma(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitPrograma(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitPrograma(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ProgramaContext programa() throws RecognitionException {
@@ -166,19 +152,6 @@ public class EnquantoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_seqComando; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterSeqComando(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitSeqComando(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitSeqComando(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final SeqComandoContext seqComando() throws RecognitionException {
@@ -242,19 +215,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ExpressaoContext.class,i);
 		}
 		public AtribuicaoContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterAtribuicao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitAtribuicao(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitAtribuicao(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class SeContext extends ComandoContext {
@@ -271,19 +231,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ComandoContext.class,i);
 		}
 		public SeContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterSe(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitSe(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitSe(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExibaContext extends ComandoContext {
@@ -291,19 +238,6 @@ public class EnquantoParser extends Parser {
 		public TerminalNode INT() { return getToken(EnquantoParser.INT, 0); }
 		public TerminalNode ID() { return getToken(EnquantoParser.ID, 0); }
 		public ExibaContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterExiba(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitExiba(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitExiba(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class EnquantoContext extends ComandoContext {
@@ -314,19 +248,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ComandoContext.class,0);
 		}
 		public EnquantoContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterEnquanto(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitEnquanto(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitEnquanto(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class IteracaoContext extends ComandoContext {
@@ -344,19 +265,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ComandoContext.class,i);
 		}
 		public IteracaoContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterIteracao(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitIteracao(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitIteracao(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class BlocoContext extends ComandoContext {
@@ -364,19 +272,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(SeqComandoContext.class,0);
 		}
 		public BlocoContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterBloco(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBloco(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitBloco(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class Iteracao2Context extends ComandoContext {
@@ -390,19 +285,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ComandoContext.class,i);
 		}
 		public Iteracao2Context(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterIteracao2(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitIteracao2(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitIteracao2(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class SwitchcaseContext extends ComandoContext {
@@ -418,19 +300,6 @@ public class EnquantoParser extends Parser {
 			return getToken(EnquantoParser.INT, i);
 		}
 		public SwitchcaseContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterSwitchcase(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitSwitchcase(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitSwitchcase(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class EscrevaContext extends ComandoContext {
@@ -438,36 +307,10 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ExpressaoContext.class,0);
 		}
 		public EscrevaContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterEscreva(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitEscreva(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitEscreva(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class SkipContext extends ComandoContext {
 		public SkipContext(ComandoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterSkip(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitSkip(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitSkip(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ComandoContext comando() throws RecognitionException {
@@ -759,37 +602,11 @@ public class EnquantoParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class LeiaContext extends ExpressaoContext {
 		public LeiaContext(ExpressaoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterLeia(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitLeia(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitLeia(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class InteiroContext extends ExpressaoContext {
 		public TerminalNode INT() { return getToken(EnquantoParser.INT, 0); }
 		public InteiroContext(ExpressaoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterInteiro(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitInteiro(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitInteiro(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class OpBinContext extends ExpressaoContext {
@@ -800,37 +617,11 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ExpressaoContext.class,i);
 		}
 		public OpBinContext(ExpressaoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOpBin(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOpBin(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitOpBin(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class IdContext extends ExpressaoContext {
 		public TerminalNode ID() { return getToken(EnquantoParser.ID, 0); }
 		public IdContext(ExpressaoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterId(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitId(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitId(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExpParContext extends ExpressaoContext {
@@ -838,19 +629,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ExpressaoContext.class,0);
 		}
 		public ExpParContext(ExpressaoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterExpPar(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitExpPar(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitExpPar(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ExpressaoContext expressao() throws RecognitionException {
@@ -1023,19 +801,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(BooleanoContext.class,i);
 		}
 		public ELogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterELogico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitELogico(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitELogico(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class NaoLogicoContext extends BooleanoContext {
@@ -1043,19 +808,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(BooleanoContext.class,0);
 		}
 		public NaoLogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterNaoLogico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitNaoLogico(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitNaoLogico(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class OpRelContext extends BooleanoContext {
@@ -1067,19 +819,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(ExpressaoContext.class,i);
 		}
 		public OpRelContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOpRel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOpRel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitOpRel(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class XorContext extends BooleanoContext {
@@ -1090,19 +829,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(BooleanoContext.class,i);
 		}
 		public XorContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterXor(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitXor(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitXor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class BoolParContext extends BooleanoContext {
@@ -1110,19 +836,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(BooleanoContext.class,0);
 		}
 		public BoolParContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterBoolPar(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitBoolPar(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitBoolPar(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class OuLogicoContext extends BooleanoContext {
@@ -1133,19 +846,6 @@ public class EnquantoParser extends Parser {
 			return getRuleContext(BooleanoContext.class,i);
 		}
 		public OuLogicoContext(BooleanoContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOuLogico(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOuLogico(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof EnquantoVisitor ) return ((EnquantoVisitor<? extends T>)visitor).visitOuLogico(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final BooleanoContext booleano() throws RecognitionException {

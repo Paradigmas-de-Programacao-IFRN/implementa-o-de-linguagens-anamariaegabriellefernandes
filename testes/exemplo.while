@@ -1,4 +1,7 @@
 a := 10 / 5;
-b := 2 ** 3;
+b := 2 * 3;
 
-se 
+se a <> b entao
+  exiba "Diferente"
+senao
+  exiba "Igual";

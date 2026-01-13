@@ -1,51 +1,52 @@
 grammar Enquanto;
 
-programa : seqComando;     // sequência de comandos
+programa: seqComando;
 
-seqComando: (comando PONTOVIRGULA)+ ;
+seqComando: (comando PONTOVIRGULA)+;
 
-comando: ID (',' ID)* ':=' expressao (',' expressao)*    # atribuicao
-       | 'skip'                                          # skip
-       | 'se' booleano 'entao' comando ('senaose' comando)* 'senao' comando   # se
-       | 'enquanto' booleano 'faca' comando              # enquanto
-       | 'exiba' (TEXTO | INT)                                   # exiba
-       | 'escreva' expressao                             # escreva
-       | 'para' ID 'de' expressao 'ate' expressao 'faca' (comando)+ 
-       | 'repita' expressao 'vezes' (comando)+
-       | 'escolha' expressao (INT ':' expressao)+ '_' ':' expressao
-       | '{' seqComando '}'                              # bloco
-       ;
+comando:
+	ID (',' ID)* ':=' expressao (',' expressao)*	# atribuicao
+	| 'skip'										# skip
+	| 'se' booleano 'entao' comando (
+		'senaose' booleano 'entao' comando
+	)* 'senao' comando												# se
+	| 'enquanto' booleano 'faca' comando							# enquanto
+	| 'escreva' expressao											# escreva
+	| 'para' ID 'de' expressao 'ate' expressao 'faca' (comando)+	# iteracao
+	| 'repita' expressao 'vezes' (comando)+							# iteracao2
+	| 'escolha' ID (INT ':' comando)+ '_' ':' comando				# switchcase
+	| '{' seqComando '}'											# bloco
+	| 'exiba' (TEXTO | INT | ID)									# exiba;
 
-expressao: INT                                           # inteiro
-         | 'leia'                                        # leia
-         | ID                                            # id
-         | expressao ('**' expressao)
-         | expressao ('*' | '/') expressao               # opBin
-         | expressao ('+' | '-') expressao               # opBin
-         | '(' expressao ')'                             # expPar
-         ;
+expressao:
+	INT									# inteiro
+	| 'leia'							# leia
+	| ID								# id
+	| expressao ('**' expressao)		# opBin
+	| expressao ('*' | '/') expressao	# opBin
+	| expressao ('+' | '-') expressao	# opBin
+	| '(' expressao ')'					# expPar;
 
-booleano: BOOLEANO                                       # bool
-        | expressao '=' expressao                        # opRel
-        | expressao '<=' expressao                       # opRel
-        | expressao '>=' expressao
-        | expressao '>' expressao
-        | expressao '<' expressao
-        | expressao '<>' expressao
-        | 'nao' booleano                                 # naoLogico
-        | booleano 'e' booleano                          # eLogico
-        | booleano 'ou' booleano                         # ouLogico
-        | booleano 'xor' booleano
-        | '(' booleano ')'                               # boolPar
-        ;
+booleano:
+	BOOLEANO					# opRel
+	| expressao '==' expressao	# opRel
+	| expressao '<=' expressao	# opRel
+	| expressao '>=' expressao	# opRel
+	| expressao '>' expressao	# opRel
+	| expressao '<' expressao	# opRel
+	| expressao '<>' expressao	# opRel
+	| 'nao' booleano			# naoLogico
+	| booleano 'e' booleano		# eLogico
+	| booleano 'ou' booleano	# ouLogico
+	| booleano 'xor' booleano	# xor
+	| '(' booleano ')'			# boolPar;
 
 BOOLEANO: 'verdadeiro' | 'falso';
-INT: ('0'..'9')+ ;
-ID: ('a'..'z')+;
+INT: ('0' ..'9')+;
+ID: ('a' ..'z')+;
 TEXTO: '"' .*? '"';
 
 PONTOVIRGULA: ';';
-
 
 Comentario: '#' .*? '\n' -> skip;
 Espaco: [ \t\n\r] -> skip;

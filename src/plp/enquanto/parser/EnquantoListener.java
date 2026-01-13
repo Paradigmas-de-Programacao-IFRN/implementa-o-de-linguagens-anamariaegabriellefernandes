@@ -76,18 +76,6 @@ public interface EnquantoListener extends ParseTreeListener {
 	 */
 	void exitEnquanto(EnquantoParser.EnquantoContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exiba}
-	 * labeled alternative in {@link EnquantoParser#comando}.
-	 * @param ctx the parse tree
-	 */
-	void enterExiba(EnquantoParser.ExibaContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exiba}
-	 * labeled alternative in {@link EnquantoParser#comando}.
-	 * @param ctx the parse tree
-	 */
-	void exitExiba(EnquantoParser.ExibaContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code escreva}
 	 * labeled alternative in {@link EnquantoParser#comando}.
 	 * @param ctx the parse tree
@@ -100,6 +88,42 @@ public interface EnquantoListener extends ParseTreeListener {
 	 */
 	void exitEscreva(EnquantoParser.EscrevaContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code iteracao}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterIteracao(EnquantoParser.IteracaoContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code iteracao}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitIteracao(EnquantoParser.IteracaoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code iteracao2}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterIteracao2(EnquantoParser.Iteracao2Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code iteracao2}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitIteracao2(EnquantoParser.Iteracao2Context ctx);
+	/**
+	 * Enter a parse tree produced by the {@code switchcase}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchcase(EnquantoParser.SwitchcaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code switchcase}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchcase(EnquantoParser.SwitchcaseContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code bloco}
 	 * labeled alternative in {@link EnquantoParser#comando}.
 	 * @param ctx the parse tree
@@ -111,6 +135,18 @@ public interface EnquantoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBloco(EnquantoParser.BlocoContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exiba}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void enterExiba(EnquantoParser.ExibaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exiba}
+	 * labeled alternative in {@link EnquantoParser#comando}.
+	 * @param ctx the parse tree
+	 */
+	void exitExiba(EnquantoParser.ExibaContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code leia}
 	 * labeled alternative in {@link EnquantoParser#expressao}.
@@ -172,18 +208,6 @@ public interface EnquantoListener extends ParseTreeListener {
 	 */
 	void exitExpPar(EnquantoParser.ExpParContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code bool}
-	 * labeled alternative in {@link EnquantoParser#booleano}.
-	 * @param ctx the parse tree
-	 */
-	void enterBool(EnquantoParser.BoolContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code bool}
-	 * labeled alternative in {@link EnquantoParser#booleano}.
-	 * @param ctx the parse tree
-	 */
-	void exitBool(EnquantoParser.BoolContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code eLogico}
 	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
@@ -220,6 +244,18 @@ public interface EnquantoListener extends ParseTreeListener {
 	 */
 	void exitOpRel(EnquantoParser.OpRelContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code xor}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void enterXor(EnquantoParser.XorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code xor}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void exitXor(EnquantoParser.XorContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code boolPar}
 	 * labeled alternative in {@link EnquantoParser#booleano}.
 	 * @param ctx the parse tree
@@ -231,4 +267,16 @@ public interface EnquantoListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBoolPar(EnquantoParser.BoolParContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ouLogico}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void enterOuLogico(EnquantoParser.OuLogicoContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ouLogico}
+	 * labeled alternative in {@link EnquantoParser#booleano}.
+	 * @param ctx the parse tree
+	 */
+	void exitOuLogico(EnquantoParser.OuLogicoContext ctx);
 }
